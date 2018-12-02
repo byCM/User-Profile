@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+
+
+{% block body %}
+    <div class="grid-75">
+        <h1>{{ user.username }}'s Profile</h1>
+        <table>
+            <tr><td>First Name:</td> <td>{% if user.first_name %} {{ user.first_name }} {% else %} <td>None</td>{% endif %}</td></tr>
+            <tr><td>Last Name:</td> <td>{% if user.last_name %} {{ user.last_name }} {% else %} <td>None</td>{% endif %}</td></tr>
+            <tr><td>Date of Birth:</td><td>{% if user.dob %} {{ user.dob }} {% else %}<td>None</td> {% endif %}</td></tr>
+            <tr><td>Bio:</td><td>{% if user.bio %} {{ user.bio }} {% else %} <td>None</td> {% endif %}</td></tr>
+            <tr><td>Email:</td><td>{% if user.email %} {{ user.email }} {% else %} <td>None</td> {% endif %}</td></tr>
+        </table>
+        <p><button type="button"><a href="{% url 'edit_profile' %}">Edit Profile</a></button></p>
+    </div>
+{% endblock %}
