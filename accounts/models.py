@@ -6,17 +6,22 @@ from django.dispatch import receiver
 
 
 class ProfilePage(models.Model):
-    user = models.OneToOneField(User, models.CASCADE)
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
-    dob = models.DateField()
+    first_name = models.CharField(max_length=255, blank=True, null=True)
+    last_name = models.CharField(max_length=255, blank=True, null=True)
+    dob = models.DateField(blank=True, null=True)
     bio = models.CharField(max_length=255, validators=[MinLengthValidator(10)])
-    email = models.EmailField()
+    email = models.EmailField(blank=True, null=True)
+    user = models.OneToOneField(User, models.CASCADE)
 
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created:
-        ProfilePage.objects.create(user=instance)
+        ProfilePage.objects.create(user=instance).save()
+
+@receiver(post_save, sender=User)
+def save_profile(sender, instance, **kwargs):
+    instance.profilepage.save()
+
 
 
 

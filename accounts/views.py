@@ -56,5 +56,4 @@ def sign_out(request):
     messages.success(request, "You've been signed out. Come back soon!")
     return HttpResponseRedirect(reverse('home'))
 
-def edit_profile(request):
-    return render(request, 'accounts/edit_profile.html')
+
