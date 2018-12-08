@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {{ block.super }}
+    <div class="grid-75">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Change Email</h1>
+            {{ email_form.as_p }}
+            <button type="submit">Submit</button>
+            <button type="cancel"><a href="{% url 'profile' %}"> Cancel </a></button>
+        </form>
+    </div>
+{% endblock %}

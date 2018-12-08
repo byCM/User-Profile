@@ -11,7 +11,9 @@ urlpatterns = [
     path('accounts/', include(('accounts.urls', "accounts")), name='accounts'),
     path('', views.home, name='home'),
     path('profile/', views.profile_view, name='profile'),
-    path('profile/edit/', views.edit_profile, name='edit_profile')
+    path('profile/edit/', views.edit_profile, name='edit_profile'),
+    path('profile/edit/email/', views.change_email, name='change_email'),
+    path('profile/edit/password/', views.change_password, name='change_password')
 ]
 
 urlpatterns += staticfiles_urlpatterns()
