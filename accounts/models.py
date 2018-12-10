@@ -11,6 +11,7 @@ class ProfilePage(models.Model):
     dob = models.DateField(blank=True, null=True)
     bio = models.CharField(max_length=255, validators=[MinLengthValidator(10)])
     email = models.EmailField(blank=True, null=True)
+    avatar = models.ImageField(upload_to='images/', null=True, blank=True)
     user = models.OneToOneField(User, models.CASCADE)
 
 @receiver(post_save, sender=User)
@@ -21,7 +22,3 @@ def create_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_profile(sender, instance, **kwargs):
     instance.profilepage.save()
-
-
-
-

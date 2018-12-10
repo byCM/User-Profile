@@ -6,6 +6,7 @@
         <h1>{{ user.username }}'s Profile</h1>
         <table>
             <h2>Profile Data</h2>
+            <tr><td>Avatar:</td><td>{% if profile.avatar %} <img src={{ profile.avatar.url }}> {% else %} <td>None</td> {% endif %}</td></tr>
             <tr><td>First Name:</td> <td>{% if profile.first_name %} {{ profile.first_name }} {% else %} <td>None</td>{% endif %}</td></tr>
             <tr><td>Last Name:</td> <td>{% if profile.last_name %} {{ profile.last_name }} {% else %} <td>None</td>{% endif %}</td></tr>
             <tr><td>Date of Birth:</td><td>{% if profile.dob %} {{ profile.dob }} {% else %}<td>None</td> {% endif %}</td></tr>

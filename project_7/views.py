@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.contrib.auth.models import User
@@ -55,16 +56,20 @@ def change_password(request):
     if request.method == 'POST':
         password_form = PasswordForm(request.POST)
         if password_form.is_valid():
-            old_password = password_form['old_password']
-            new_password = password_form['new_password1']
+            old_password = password_form.cleaned_data['old_password']
+            new_password = password_form.cleaned_data['new_password1']
             if user.check_password(old_password):
                 user.set_password(new_password)
                 user.save()
+                update_session_auth_hash(request, user)
                 messages.success(request, "Your password has been changed")
+                return HttpResponseRedirect(reverse('profile'))
             else:
                 messages.success(request, "That is not your current password")
                 return HttpResponseRedirect(reverse('profile'))
         return render(request, 'accounts/change_password.html', {'password_form': password_form})
     password_form = PasswordForm()
     return render(request, 'accounts/change_password.html', {'password_form': password_form})
+
+
 
