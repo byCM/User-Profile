@@ -1,7 +1,6 @@
 DESCRIPTION
 
 Create a profile page that adds details to registered user. Display the details to the profile page that is visible on login. Create a page to edit the profile. The profile page will include first name, last name, email, date of birth, confirm email, short bio and avatar upload. Set up validation for email, date of birth and bio. Date of Birth validation will check for a proper date format: YYYY-MM-DD, MM/DD/YYYY, or MM/DD/YY. Email validation will check that the email addresses match and are in a valid format. Bio validation will check that the bio is 10 characters or longer and properly escapes HTML formatting.
-
 Create a "change password page", that updates the user password. This page will ask for current password, new password and confirm password. Set up validation which checks that the current password is valid, that the new password and confirm password fields match, and that the new password follows the following policy
 
 must not be the same as the current password
@@ -17,7 +16,6 @@ users can upload avatars and transform them on-site
 
 
 INSTRUCTIONS
-
 Create Django model for user profile
 Add necessary routes
 Update “profile” view to display the user profile with the following fields: First Name, Last Name, Email, Date of Birth, Bio and Avatar. Include a link to edit the profile.
