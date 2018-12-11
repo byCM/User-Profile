@@ -15,7 +15,7 @@ the admin user has no profile<br />
 users can upload avatars and transform them on-site<br />
 <br />
 <br />
-#INSTRUCTIONS<br />
+**INSTRUCTIONS** <br/>
 
 Create Django model for user profile<br />
 Add necessary routes<br />
