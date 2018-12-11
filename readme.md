@@ -19,6 +19,7 @@ Users can upload avatars and transform them on-site<br />
 >Create Django model for user profile<br />
 <br />
 >Add necessary routes<br />
+<br />
 >Update “profile” view to display the user profile with the following fields: First Name, Last Name, Email, Date of Birth, Bio and >Avatar.<br /> Include a link to edit the profile.<br />
 >Create “edit” view with the route “/profile/edit” that allows the user to edit the user profile with the following fields: First Name, Last Name, Email, Date of Birth, Confirm Email, Bio and Avatar.<br />
 Validate user input "Email" field: check that the email addresses match and are in a valid format.<br />
