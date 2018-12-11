@@ -14,10 +14,12 @@ class ProfilePage(models.Model):
     avatar = models.ImageField(upload_to='images/', null=True, blank=True)
     user = models.OneToOneField(User, models.CASCADE)
 
+
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created:
         ProfilePage.objects.create(user=instance).save()
+
 
 @receiver(post_save, sender=User)
 def save_profile(sender, instance, **kwargs):

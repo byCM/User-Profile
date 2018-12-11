@@ -6,7 +6,6 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 
-
 def sign_in(request):
     form = AuthenticationForm()
     if request.method == 'POST':
