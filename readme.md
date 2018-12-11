@@ -16,14 +16,5 @@ Users can upload avatars and transform them on-site<br />
 <br />
 **INSTRUCTIONS** <br/>
 
->-Create Django model for user profile<br />
->-Add necessary routes<br />
->-Update “profile” view to display the user profile with the following fields: First Name, Last Name, Email, Date of Birth, Bio and 
->Avatar.<br /> -Include a link to edit the profile.<br />
->-Create “edit” view with the route “/profile/edit” that allows the user to edit the user profile with the following fields: First Name, --Last Name, Email, Date of Birth, Confirm Email, Bio and Avatar.<br />
--Validate user input "Email" field: check that the email addresses match and are in a valid format.<br />
--Validate user input "Date of Birth" field: check for a proper date format (YYYY-MM-DD, MM/DD/YYYY, or MM/DD/YY)<br />
--Validate user input "Bio" field: check that the bio is 10 characters or longer and properly escapes HTML formatting.<br />
--Create “change-password” view with the route “/profile/change_password” that allows the user to update their password using user.set_password() and then User.save(). Form fields will be: current password, new password, confirm password<br />
--Validate user input "Password" fields: check that the old password is correct using User.check_password() and the new password matches -the confirm password field and follows the password policy.<br />
--Use CSS to style headings, font, and form.<br />
+>- Use HTML/CSS to build and style the profile page and bio page.
+- Create a Django model for the user profile.
