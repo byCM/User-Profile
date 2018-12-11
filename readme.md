@@ -1,6 +1,6 @@
 **DESCRIPTION**<br />
 
-User Profile
+User Profile with Django
 
 **INSTRUCTIONS** <br/>
 
