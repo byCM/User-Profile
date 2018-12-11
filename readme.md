@@ -23,8 +23,7 @@ User Profile
 >- Validate user input "Password" fields: check that the old password is correct using User.check_password() and the new password matches the confirm password field and follows the following password policy. Password must meet requirements.
 
 
-<br />
-<br />
+
 **PASSWORD REQUIREMENTS**<br />
 -Must not be the same as the current password <br />
 -Minimum password length of 14 characters. <br />
