@@ -24,7 +24,7 @@ class EmailForm(ModelForm):
 
     def clean(self):
         cleaned_data = super(EmailForm, self).clean()
-        email = cleaned_data['email']
+        email = cleaned_data.get('email')
         if email == self.instance.email:
             return
         try:
